@@ -3,12 +3,17 @@ import { Router } from "express";
 
 const router = Router()
 
-//Obtener listado completo de ejercicios
+//Get all exercises
 router.get('/', ExerciseController.getAll);
 
-//Crear nuevo ejercicio
-//Verificar por que no entra a la funcion, posible error en como se esta llamando desde postman
+//Create a new exercise
 router.post('/', ExerciseController.newExercise);
+
+//Edit exercise
+router.patch('/:id', ExerciseController.editExercise);
+
+//Delete a exercise
+router.delete('/:id', ExerciseController.deleteExercise);
 
 export default router;
 
