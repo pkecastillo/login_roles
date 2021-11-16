@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 import { IsNotEmpty } from "class-validator";
 
 @Entity()
-export class Exercise {
+export class Members {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -11,8 +11,15 @@ export class Exercise {
   name: string;
 
   @Column()
-  muscle_group: string;
+  @IsNotEmpty()
+  lastname: string;
 
   @Column()
-  description: string;
+  telephone: string;
+
+  @Column()
+  birthday: Date;
+
+  @Column()
+  address: string;
 }
