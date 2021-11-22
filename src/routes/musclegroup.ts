@@ -1,8 +1,14 @@
 import MuscleGroupController from "../controller/MuscleGroupController";
 import { Router } from "express";
 
-const router = Router();
+const muscleGroupRouter = Router();
 
-router.get("/", MuscleGroupController.getAll);
+muscleGroupRouter.get("/", MuscleGroupController.getAll);
 
-export default router;
+muscleGroupRouter.post("/", MuscleGroupController.newMuscleGroup);
+
+muscleGroupRouter.patch("/:id", MuscleGroupController.editMuscleGroup);
+
+muscleGroupRouter.delete("/:id", MuscleGroupController.deleteMuscleGroup);
+
+export default muscleGroupRouter;

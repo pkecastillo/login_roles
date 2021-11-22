@@ -1,18 +1,18 @@
 import ExerciseController from "../controller/ExerciseController";
 import { Router } from "express";
 
-const router = Router();
+const exerciseRouter = Router();
 
 //Get all exercises
-router.get("/", ExerciseController.getAll);
+exerciseRouter.get("/", ExerciseController.getAll);
 
 //Create a new exercise
-router.post("/", ExerciseController.newExercise);
+exerciseRouter.post("/", ExerciseController.newExercise);
 
 //Edit exercise
-router.put("/:id", ExerciseController.editExercise);
+exerciseRouter.put("/:id", ExerciseController.editExercise);
 
 //Delete a exercise
-router.delete("/:id", ExerciseController.deleteExercise);
+exerciseRouter.delete("/:id", ExerciseController.deleteExercise);
 
-export default router;
+export default exerciseRouter;
