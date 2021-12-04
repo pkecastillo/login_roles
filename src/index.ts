@@ -8,6 +8,7 @@ import routes from "./routes";
 import exerciseRouter from "./routes/exercise";
 import muscleGroupRouter from "./routes/musclegroup";
 import memberRouter from "./routes/member";
+import planRouter from "./routes/plan";
 const PORT = process.env.PORT || 3000;
 
 createConnection()
@@ -24,6 +25,7 @@ createConnection()
     app.use("/exercise", exerciseRouter);
     app.use("/member", memberRouter);
     app.use("/musclegroup", muscleGroupRouter);
+    app.use("/plan", planRouter);
 
     // start express server
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

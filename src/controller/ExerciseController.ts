@@ -55,7 +55,7 @@ export class ExerciseController {
   static editExercise = async (req: Request, res: Response) => {
     let exercise;
     const { id } = req.params;
-    const { name, muscle_group, description } = req.body;
+    const { name, muscle_group, description } = req.body.data;
 
     const exerciseRepository = getRepository(Exercise);
 
